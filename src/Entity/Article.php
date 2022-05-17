@@ -34,6 +34,26 @@ class Article
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nameProduct;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $imageProduct;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $descriptionProduct;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $dutyFreePrice;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,6 +91,54 @@ class Article
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getNameProduct(): ?string
+    {
+        return $this->nameProduct;
+    }
+
+    public function setNameProduct(string $nameProduct): self
+    {
+        $this->nameProduct = $nameProduct;
+
+        return $this;
+    }
+
+    public function getImageProduct(): ?string
+    {
+        return $this->imageProduct;
+    }
+
+    public function setImageProduct(?string $imageProduct): self
+    {
+        $this->imageProduct = $imageProduct;
+
+        return $this;
+    }
+
+    public function getDescriptionProduct(): ?string
+    {
+        return $this->descriptionProduct;
+    }
+
+    public function setDescriptionProduct(?string $descriptionProduct): self
+    {
+        $this->descriptionProduct = $descriptionProduct;
+
+        return $this;
+    }
+
+    public function getDutyFreePrice(): ?float
+    {
+        return $this->dutyFreePrice;
+    }
+
+    public function setDutyFreePrice(float $dutyFreePrice): self
+    {
+        $this->dutyFreePrice = $dutyFreePrice;
 
         return $this;
     }
