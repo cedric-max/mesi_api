@@ -36,14 +36,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
-
-    /**
-     * @Groups("user:write")
-     *
-     * @SerializedName("password")
-     */
-    private $plainPassword;
-
     /**
      * @ORM\Column(type="string", length=255)
      */
