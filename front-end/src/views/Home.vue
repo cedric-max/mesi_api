@@ -189,10 +189,28 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "Home",
   components: {
     siderbar: () => import("@/components/details/sidebar"),
   },
+  // methods:{
+  //
+  // },
+  mounted() {
+    axios
+        .get('https://127.0.0.1:8000/api/users?page=1')
+        .then(function (response) {
+          console.log(response.data["hydra:member"][0]);
+          //I need this data here ^^
+          return response.data;
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
+  }
 };
 </script>
