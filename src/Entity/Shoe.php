@@ -6,7 +6,9 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ShoeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
+ * @ApiResource()
  * @ORM\Entity(repositoryClass=ShoeRepository::class)
  */
 #[ApiResource]
