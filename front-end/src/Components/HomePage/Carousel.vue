@@ -8,13 +8,13 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="img-fluid" src="@/assets/jum1.jpg" alt="First slide">
+          <img class="img-fluid" src="../../../dist/img/ilustration_mesi/carousel/barrett-ward-uFY7VaTvkK4-unsplash.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="@/assets/jum2.jpg" alt="Second slide">
+          <img class="img-fluid" src="../../../dist/img/ilustration_mesi/carousel/averie-woodard-4nulm-JUYFo-unsplash.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-          <img class="img-fluid" src="@/assets/jum3.jpg" alt="Third slide">
+          <img class="img-fluid" src="../../../dist/img/ilustration_mesi/carousel/ian-dooley-TT-ROxWj9nA-unsplash.jpg" alt="Third slide">
         </div>
       </div>
     </div>
