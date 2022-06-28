@@ -35,7 +35,7 @@ class Review
      * @ORM\ManyToOne(targetEntity=Shoe::class, inversedBy="reviews")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $review_shoe;
+    private $reviewShoe;
 
     public function getId(): ?int
     {
@@ -68,12 +68,12 @@ class Review
 
     public function getReviewShoe(): ?Shoe
     {
-        return $this->review_shoe;
+        return $this->reviewShoe;
     }
 
-    public function setReviewShoe(?Shoe $review_shoe): self
+    public function setReviewShoe(?Shoe $reviewShoe): self
     {
-        $this->review_shoe = $review_shoe;
+        $this->reviewShoe = $reviewShoe;
 
         return $this;
     }

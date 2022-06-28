@@ -64,7 +64,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $city;
 
     /**
-     * @ORM\OneToMany(targetEntity=OrderDetail::class, mappedBy="orderdetail_user", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=OrderDetail::class, mappedBy="orderdetailUser", orphanRemoval=true)
      */
     private $orderDetails;
 
