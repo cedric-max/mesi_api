@@ -24,6 +24,12 @@ class OrderDetail
      */
     private $numberArticle;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orderDetails")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $orderdetail_user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -37,6 +43,18 @@ class OrderDetail
     public function setNumberArticle(int $numberArticle): self
     {
         $this->numberArticle = $numberArticle;
+
+        return $this;
+    }
+
+    public function getOrderdetailUser(): ?User
+    {
+        return $this->orderdetail_user;
+    }
+
+    public function setOrderdetailUser(?User $orderdetail_user): self
+    {
+        $this->orderdetail_user = $orderdetail_user;
 
         return $this;
     }

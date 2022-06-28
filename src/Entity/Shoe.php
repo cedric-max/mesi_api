@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ShoeRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -45,6 +47,11 @@ class Shoe
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $stock;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Review::class, mappedBy="review_shoe", orphanRemoval=true)
+     */
+    private $reviews;
 
     public function getId(): ?int
     {
@@ -110,4 +117,35 @@ class Shoe
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Review>
+     */
+    public function getReviews(): Collection
+    {
+        return $this->reviews;
+    }
+
+    public function addReview(Review $review): self
+    {
+        if (!$this->reviews->contains($review)) {
+            $this->reviews[] = $review;
+            $review->setReviewShoe($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(Review $review): self
+    {
+        if ($this->reviews->removeElement($review)) {
+            // set the owning side to null (unless already changed)
+            if ($review->getReviewShoe() === $this) {
+                $review->setReviewShoe(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
