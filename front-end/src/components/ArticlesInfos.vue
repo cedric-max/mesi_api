@@ -25,7 +25,7 @@ export default {
   created() {
     this.$root.$on("getCardId", this.id);
     axios
-      .get(`https://127.0.0.1:8000/api/shoes/${this.id}`)
+      .get(`https://127.0.0.1:8000/api/shoes/1`)
       .then((response) => {
         this.article = response.data;
         console.log(this.article);
