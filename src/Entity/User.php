@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -60,6 +62,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $city;
+
+    /**
+     * @ORM\OneToMany(targetEntity=OrderDetail::class, mappedBy="orderdetailUser", orphanRemoval=true)
+     */
+    private $orderDetails;
+
+    public function __construct()
+    {
+        $this->orderDetails = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -206,6 +218,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCity(?string $city): self
     {
         $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, OrderDetail>
+     */
+    public function getOrderDetails(): Collection
+    {
+        return $this->orderDetails;
+    }
+
+    public function addOrderDetail(OrderDetail $orderDetail): self
+    {
+        if (!$this->orderDetails->contains($orderDetail)) {
+            $this->orderDetails[] = $orderDetail;
+            $orderDetail->setOrderdetailUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderDetail(OrderDetail $orderDetail): self
+    {
+        if ($this->orderDetails->removeElement($orderDetail)) {
+            // set the owning side to null (unless already changed)
+            if ($orderDetail->getOrderdetailUser() === $this) {
+                $orderDetail->setOrderdetailUser(null);
+            }
+        }
 
         return $this;
     }

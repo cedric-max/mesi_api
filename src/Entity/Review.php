@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
 * @ApiResource()
 * @ORM\Entity(repositoryClass=ReviewRepository::class)
+* iri="shoe"
  */
 #[ApiResource]
 class Review
@@ -29,6 +30,12 @@ class Review
      * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $commentary;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Shoe::class, inversedBy="reviews")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $reviewShoe;
 
     public function getId(): ?int
     {
@@ -55,6 +62,18 @@ class Review
     public function setCommentary(?string $commentary): self
     {
         $this->commentary = $commentary;
+
+        return $this;
+    }
+
+    public function getReviewShoe(): ?Shoe
+    {
+        return $this->reviewShoe;
+    }
+
+    public function setReviewShoe(?Shoe $reviewShoe): self
+    {
+        $this->reviewShoe = $reviewShoe;
 
         return $this;
     }

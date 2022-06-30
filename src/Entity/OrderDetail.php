@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\OrderDetailRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -24,6 +26,22 @@ class OrderDetail
      */
     private $numberArticle;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="OrderDetails")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $orderdetailUser;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Shoe::class, mappedBy="shoeOrderdetail")
+     */
+    private $shoes;
+
+    public function __construct()
+    {
+        $this->shoes = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -37,6 +55,45 @@ class OrderDetail
     public function setNumberArticle(int $numberArticle): self
     {
         $this->numberArticle = $numberArticle;
+
+        return $this;
+    }
+
+    public function getOrderdetailUser(): ?User
+    {
+        return $this->orderdetailUser;
+    }
+
+    public function setOrderdetailUser(?User $orderdetailUser): self
+    {
+        $this->orderdetailUser = $orderdetailUser;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Shoe>
+     */
+    public function getShoes(): Collection
+    {
+        return $this->shoes;
+    }
+
+    public function addShoe(Shoe $shoe): self
+    {
+        if (!$this->shoes->contains($shoe)) {
+            $this->shoes[] = $shoe;
+            $shoe->addShoeOrderdetail($this);
+        }
+
+        return $this;
+    }
+
+    public function removeShoe(Shoe $shoe): self
+    {
+        if ($this->shoes->removeElement($shoe)) {
+            $shoe->removeShoeOrderdetail($this);
+        }
 
         return $this;
     }
