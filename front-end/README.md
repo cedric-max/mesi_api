@@ -1,26 +1,29 @@
-# Vue Store-Front Templete
+# front-end
 
-> An E-commerce templete made with bootstrap4
-> and Vue/Vuex/Vue-router.
+## Project setup
+```
+npm install
+```
 
-
-<p align="center">
-  <img src="https://i.imgur.com/LMRIylM.png">
-</p>
-
-## Development/Producation Setup
-
-``` bash
-# Open the project folder
-cd Vue-Ecom && npm install
-
-# FOR DEV: If you have **vue/cli 3** then through **vue ui** you can import the file and serve it. else 
+### Compiles and hot-reloads for development
+```
 npm run serve
+```
 
-# FOR BUILD: 
+### Compiles and minifies for production
+```
 npm run build
 ```
 
-# Project Structure 
+### Run your unit tests
+```
+npm run test:unit
+```
 
->coming soon!
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
