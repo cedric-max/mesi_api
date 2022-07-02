@@ -64,6 +64,12 @@ class Shoe
      */
     private $shoeBrand;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Color::class, inversedBy="shoes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $shoeColor;
+
     public function __construct()
     {
         $this->shoeOrderdetail = new ArrayCollection();
@@ -196,6 +202,18 @@ class Shoe
     public function setShoeBrand(?Brand $shoeBrand): self
     {
         $this->shoeBrand = $shoeBrand;
+
+        return $this;
+    }
+
+    public function getShoeColor(): ?Color
+    {
+        return $this->shoeColor;
+    }
+
+    public function setShoeColor(?Color $shoeColor): self
+    {
+        $this->shoeColor = $shoeColor;
 
         return $this;
     }

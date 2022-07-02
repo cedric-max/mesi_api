@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20220702140141 extends AbstractMigration
+final class Version20220702145258 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -20,14 +20,14 @@ final class Version20220702140141 extends AbstractMigration
     public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE shoe ADD CONSTRAINT FK_C1B7A8495ECA6032 FOREIGN KEY (shoe_brand_id) REFERENCES brand (id)');
-        $this->addSql('CREATE INDEX IDX_C1B7A8495ECA6032 ON shoe (shoe_brand_id)');
+        $this->addSql('ALTER TABLE shoe ADD CONSTRAINT FK_C1B7A84960E5AF8F FOREIGN KEY (shoe_color_id) REFERENCES color (id)');
+        $this->addSql('CREATE INDEX IDX_C1B7A84960E5AF8F ON shoe (shoe_color_id)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE shoe DROP FOREIGN KEY FK_C1B7A8495ECA6032');
-        $this->addSql('DROP INDEX IDX_C1B7A8495ECA6032 ON shoe');
+        $this->addSql('ALTER TABLE shoe DROP FOREIGN KEY FK_C1B7A84960E5AF8F');
+        $this->addSql('DROP INDEX IDX_C1B7A84960E5AF8F ON shoe');
     }
 }
