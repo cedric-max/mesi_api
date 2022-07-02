@@ -58,6 +58,12 @@ class Shoe
      */
     private $shoeOrderdetail;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Brand::class, inversedBy="shoes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $shoeBrand;
+
     public function __construct()
     {
         $this->shoeOrderdetail = new ArrayCollection();
@@ -178,6 +184,18 @@ class Shoe
     public function removeShoeOrderdetail(OrderDetail $shoeOrderdetail): self
     {
         $this->shoeOrderdetail->removeElement($shoeOrderdetail);
+
+        return $this;
+    }
+
+    public function getShoeBrand(): ?Brand
+    {
+        return $this->shoeBrand;
+    }
+
+    public function setShoeBrand(?Brand $shoeBrand): self
+    {
+        $this->shoeBrand = $shoeBrand;
 
         return $this;
     }

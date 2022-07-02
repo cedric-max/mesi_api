@@ -51,7 +51,7 @@ export default {
   },
   created() {
     axios
-      .get("https://127.0.0.1:8000/api/shoes?page=1")
+      .get("http://127.0.0.1:8000/api/shoes?page=1")
       .then((response) => {
         this.articles = response.data["hydra:member"];
         console.log(this.articles);
