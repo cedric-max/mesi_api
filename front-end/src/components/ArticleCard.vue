@@ -1,28 +1,33 @@
 <template>
-  <div class="container" v-if="articles">
-    <div class="row">
-      <div
-        class="card col-xl-6 shadow-lg p-3 mb-5 bg-body rounded"
-        v-for="article in articles"
-        :key="article.id"
-        v-on:click="getCardId(article.id)"
-      >
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img
-              :src="article.picture"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">{{ article.name }}</h5>
-              <p class="card-text">Prix : {{ article.price }} €</p>
-              <p class="card-text">
-                <small class="text-muted" v-if="article.stock">En stock</small>
-              </p>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <div class="col" v-for="article in articles" :key="article.id">
+      <div class="card shadow-sm">
+        <img
+          :src="article.picture"
+          class="bd-placeholder-img card-img-top"
+          width="auto"
+          height="425"
+          alt="..."
+        />
+
+        <div class="card-body">
+          <p class="card-text">
+            {{ article.name }}
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-secondary"
+                @click="goTodetail(article.id)"
+              >
+                Details
+              </button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                Add chart
+              </button>
             </div>
+            <small class="text-muted">{{ article.price }} $</small>
           </div>
         </div>
       </div>
@@ -31,34 +36,15 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "ArticleCard",
-  data() {
-    return {
-      articles: "",
-    };
-  },
+  props: ["articles"],
   methods: {
-    getCardId: function (id) {
+    goTodetail: function (id) {
       console.log(id);
-      this.$router.push("/articlesDetails");
-      // let routerIdArticle = this.$router.resolve({ path: "/ArticlesDetails" });
-      // window.location(routerIdArticle.href);
+      this.$router.push({ name: "articlesDetails", params: { id: id } });
       return id;
     },
-  },
-  created() {
-    axios
-      .get("https://127.0.0.1:8000/api/shoes?page=1")
-      .then((response) => {
-        this.articles = response.data["hydra:member"];
-        console.log(this.articles);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
   },
 };
 </script>
