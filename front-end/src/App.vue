@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-navbar sticky toggleable="lg" type="dark" variant="dark">
+    <b-navbar fixed="top" toggleable="lg" type="dark" variant="dark">
       <b-navbar-brand href="/"> NavBar </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -21,5 +21,7 @@
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 </style>

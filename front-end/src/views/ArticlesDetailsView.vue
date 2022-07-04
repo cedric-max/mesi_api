@@ -1,16 +1,15 @@
 <template>
   <div>
-    <p>Articles details</p>
-    <ArticleInfos></ArticleInfos>
+    <ArticlesInfos />
   </div>
 </template>
 
 <script>
-import ArticleInfos from "@/components/ArticlesInfos";
+import ArticlesInfos from "@/components/ArticlesInfos";
 export default {
   name: "ArticlesDetailsView",
   components: {
-    ArticleInfos,
+    ArticlesInfos,
   },
 };
 </script>
