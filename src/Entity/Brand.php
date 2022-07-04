@@ -32,6 +32,11 @@ class Brand
      */
     private $shoes;
 
+    /**
+     * @ORM\Column(type="string", length=1000)
+     */
+    private $logo;
+
     public function __construct()
     {
         $this->shoes = new ArrayCollection();
@@ -80,6 +85,18 @@ class Brand
                 $shoe->setShoeBrand(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    public function setLogo(string $logo): self
+    {
+        $this->logo = $logo;
 
         return $this;
     }
