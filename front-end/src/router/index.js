@@ -57,9 +57,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(
-        /* webpackChunkName: "ArticlesDetails" */ "../views/CartView"
-      ),
+      import(/* webpackChunkName: "ArticlesDetails" */ "../views/CartView"),
   },
   {
     path: "/sign-in",
@@ -68,9 +66,7 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(
-        /* webpackChunkName: "ArticlesDetails" */ "../views/SignInView"
-      ),
+      import(/* webpackChunkName: "ArticlesDetails" */ "../views/SignInView"),
   },
 ];
 

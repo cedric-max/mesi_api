@@ -3,12 +3,16 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">
-          First featurette heading.
+          Orci varius natoque penatibus et magnis
           <span class="text-muted">It’ll blow your mind.</span>
         </h2>
         <p class="lead">
-          Some great placeholder content for the first featurette here. Imagine
-          some exciting prose here.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          faucibus ut eros eget dictum. Nam facilisis neque ut ornare convallis.
+          Donec eget iaculis velit. Nulla quis finibus dolor. Nam condimentum
+          malesuada nisl. Aenean id erat vitae dolor gravida euismod. Praesent
+          luctus, tortor ac pulvinar bibendum, massa mauris pellentesque ipsum,
+          a dignissim magna nisi ac mi.
         </p>
       </div>
       <div class="col-md-5">
@@ -34,13 +38,16 @@
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">
-          Oh yeah, it’s that good.
+          Orci varius natoque penatibus et magnis
           <span class="text-muted">See for yourself.</span>
         </h2>
         <p class="lead">
-          Another featurette? Of course. More placeholder content here to give
-          you an idea of how this layout would work with some actual real-world
-          content in place.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          faucibus ut eros eget dictum. Nam facilisis neque ut ornare convallis.
+          Donec eget iaculis velit. Nulla quis finibus dolor. Nam condimentum
+          malesuada nisl. Aenean id erat vitae dolor gravida euismod. Praesent
+          luctus, tortor ac pulvinar bibendum, massa mauris pellentesque ipsum,
+          a dignissim magna nisi ac mi.
         </p>
       </div>
       <div class="col-md-5 order-md-1">
@@ -66,13 +73,14 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading">
-          And lastly, this one. <span class="text-muted">Checkmate.</span>
+          Orci varius natoque penatibus
+          <span class="text-muted">Checkmate.</span>
         </h2>
         <p class="lead">
-          And yes, this is the last block of representative placeholder content.
-          Again, not really intended to be actually read, simply here to give
-          you a better view of what this would look like with some actual
-          content. Your content.
+          Orci varius natoque penatibus et magnis dis parturient montes,
+          nascetur ridiculus mus. Aliquam nec nisi nec ante fermentum laoreet
+          vitae sit amet sapien. Quisque hendrerit quam ut tellus suscipit, eget
+          aliquam velit porta. Cras ac commodo diam.
         </p>
       </div>
       <div class="col-md-5">

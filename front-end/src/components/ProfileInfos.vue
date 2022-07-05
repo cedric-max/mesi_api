@@ -24,7 +24,7 @@ export default {
     axios
       .get("https://127.0.0.1:8000/api/users?page=1")
       .then((response) => {
-        this.user = response.data["hydra:member"][0];
+        this.user = response.data["hydra:member"][6];
       })
       .catch((e) => {
         console.log(e);

@@ -10,7 +10,7 @@
           <b-nav-item to="/listArticles"> Articles </b-nav-item>
           <b-nav-item disabled href="#"> Disabled </b-nav-item>
           <b-nav-item to="sign-in"> Conection </b-nav-item>
-          <b-nav-item  to="/cart">Cart </b-nav-item>
+          <b-nav-item to="/cart">Cart </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>

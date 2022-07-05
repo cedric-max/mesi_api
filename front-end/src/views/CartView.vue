@@ -1,20 +1,18 @@
 <template>
   <div>
-  <Cart/>
+    <CartComponent />
   </div>
 </template>
 
 <script>
-import Cart from "@/components/Cart";
+import CartComponent from "@/components/CartComponent";
 
 export default {
   name: "CartView",
   components: {
-    Cart,
+    CartComponent,
   },
-}
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

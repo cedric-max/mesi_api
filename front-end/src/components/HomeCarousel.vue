@@ -39,10 +39,13 @@
 
           <div class="container">
             <div class="carousel-caption text-start">
-              <h1>Example headline.</h1>
+              <h1>
+                Consectetur adipiscing elit. Pellentesque faucibus ut eros eget.
+              </h1>
               <p>
-                Some representative placeholder content for the first slide of
-                the carousel.
+                Orci varius natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus. Aliquam nec nisi nec ante fermentum
+                laoreet vitae sit amet sapien.
               </p>
               <p>
                 <a class="btn btn-lg btn-primary" href="#">Sign up today</a>

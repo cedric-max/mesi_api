@@ -1,7 +1,7 @@
 <template>
-<div>
-  <SignInForm/>
-</div>
+  <div>
+    <SignInForm />
+  </div>
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
   components: {
     SignInForm,
   },
-}
+};
 </script>
 
 <style scoped>
@@ -55,5 +55,4 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-
 </style>

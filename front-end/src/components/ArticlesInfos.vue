@@ -47,11 +47,14 @@
       <div class="row align-items-md-stretch">
         <div class="col-md-6">
           <div class="h-100 p-5 text-white bg-dark rounded-3">
-            <h2>Change the background</h2>
+            <h2>ut eros eget dictum</h2>
             <p>
-              Swap the background-color utility and add a `.text-*` color
-              utility to mix up the jumbotron look. Then, mix and match with
-              additional component themes and more.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque faucibus ut eros eget dictum. Nam facilisis neque ut
+              ornare convallis. Donec eget iaculis velit. Nulla quis finibus
+              dolor. Nam condimentum malesuada nisl. Aenean id erat vitae dolor
+              gravida euismod. Praesent luctus, tortor ac pulvinar bibendum,
+              massa mauris pellentesque ipsum, a dignissim magna nisi ac mi.
             </p>
             <button class="btn btn-outline-light" type="button">
               Example button
